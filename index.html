@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COFONTA® — Instalaciones de Fontanería en Tenerife</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --steel: #1c3452;
+      --blue: #1a56a0;
+      --sky: #3b82c4;
+      --water: #7eb8d4;
+      --ice: #d4eaf7;
+      --white: #f5f9fc;
+      --gold: #c9a84c;
+      --rust: #c45c3b;
+      --text: #e8f0f7;
+      --muted: #8aafc8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(10,22,40,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(59,130,196,0.15);
+    }
+    .nav-logo {
+      display: flex; align-items: baseline; gap: 0.3rem;
+    }
+    .nav-logo span.brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; letter-spacing: 0.12em;
+      color: var(--white);
+    }
+    .nav-logo span.reg {
+      font-size: 0.75rem; color: var(--gold); vertical-align: super;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+    .nav-cta {
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.55rem 1.4rem; border: 1px solid var(--sky);
+      color: var(--sky); text-decoration: none; background: transparent;
+      transition: all 0.25s; cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--sky); color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 3rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,86,160,0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(10,22,40,0.9) 0%, transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, #0d2040 50%, #0a1628 100%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,196,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,196,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-pipe {
+      position: absolute; top: 0; right: 18%; width: 2px;
+      height: 100%; background: linear-gradient(180deg, transparent 0%, var(--sky) 40%, var(--water) 70%, transparent 100%);
+      opacity: 0.2;
+    }
+    .hero-pipe::after {
+      content: ''; position: absolute; top: 38%; left: 50%; transform: translateX(-50%);
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--water); box-shadow: 0 0 20px var(--sky);
+    }
+
+    .hero-content { position: relative; max-width: 760px; }
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 40px; height: 1px; background: var(--gold);
+    }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 0.95; letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 1.8rem;
+    }
+    h1 em {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic; color: var(--water); font-size: 0.9em;
+    }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted); line-height: 1.7;
+      max-width: 520px; margin-bottom: 3rem;
+      font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 0.9rem 2.2rem; background: var(--blue);
+      color: var(--white); text-decoration: none;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border: none; cursor: pointer; transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--sky); }
+    .btn-ghost {
+      padding: 0.9rem 2.2rem; background: transparent;
+      color: var(--muted); text-decoration: none;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(139,175,200,0.3); cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--muted); color: var(--white); }
+
+    .hero-stats {
+      position: absolute; right: 3rem; bottom: 6rem;
+      display: flex; flex-direction: column; gap: 2.5rem;
+      text-align: right;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem; color: var(--white); line-height: 1;
+      letter-spacing: 0.06em;
+    }
+    .stat-num span { color: var(--gold); }
+    .stat-label {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-top: 0.2rem;
+    }
+
+    /* ── SERVICES ── */
+    .section { padding: 7rem 3rem; }
+    .section-header { margin-bottom: 4rem; }
+    .section-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: 0.05em;
+      color: var(--white); line-height: 1;
+    }
+    h2 em {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic; color: var(--water);
+    }
+
+    .services-bg { background: var(--steel); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px; background: rgba(59,130,196,0.1);
+    }
+    .service-card {
+      background: var(--steel); padding: 2.5rem;
+      border: 1px solid transparent;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--gold);
+      transition: width 0.4s;
+    }
+    .service-card:hover { border-color: rgba(59,130,196,0.2); background: #243d5e; }
+    .service-card:hover::before { width: 100%; }
+    .service-icon {
+      width: 44px; height: 44px; margin-bottom: 1.5rem;
+      color: var(--sky);
+    }
+    .service-card h3 {
+      font-size: 1rem; font-weight: 500; color: var(--white);
+      margin-bottom: 0.6rem; letter-spacing: 0.02em;
+    }
+    .service-card p {
+      font-size: 0.85rem; color: var(--muted); line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── EMPRESA ── */
+    .empresa { background: var(--navy); }
+    .empresa-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: start;
+    }
+    .empresa-text p {
+      font-size: 0.95rem; color: var(--muted); line-height: 1.85;
+      font-weight: 300; margin-bottom: 1.5rem;
+    }
+    .empresa-text p strong { color: var(--water); font-weight: 500; }
+    .calidad-list { list-style: none; margin-top: 2rem; }
+    .calidad-list li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1rem 0; border-bottom: 1px solid rgba(59,130,196,0.1);
+      font-size: 0.9rem; color: var(--muted); font-weight: 300;
+    }
+    .calidad-list li:last-child { border-bottom: none; }
+    .calidad-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; color: rgba(59,130,196,0.3);
+      line-height: 1; min-width: 36px;
+    }
+    .empresa-image-stack { position: relative; }
+    .img-card {
+      background: var(--steel);
+      border: 1px solid rgba(59,130,196,0.15);
+      overflow: hidden;
+    }
+    .img-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+    .img-card-label {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .img-card:first-child { margin-bottom: 1.5rem; }
+    .img-card:last-child { margin-left: 3rem; }
+
+    .asociaciones {
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid rgba(59,130,196,0.15);
+    }
+    .asociaciones-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.5rem;
+    }
+    .logos-row { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .logo-badge {
+      padding: 0.6rem 1.2rem; border: 1px solid rgba(59,130,196,0.2);
+      font-size: 0.75rem; font-weight: 500; color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── OBRAS ── */
+    .obras { background: linear-gradient(180deg, var(--steel) 0%, var(--navy) 100%); }
+    .obras-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .obra-card {
+      background: var(--navy);
+      border: 1px solid rgba(59,130,196,0.12);
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .obra-card:hover { transform: translateY(-4px); border-color: rgba(59,130,196,0.4); }
+    .obra-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .obra-card-body { padding: 1.2rem 1.4rem; }
+    .obra-card-body h4 {
+      font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 0.3rem;
+    }
+    .obra-card-body p {
+      font-size: 0.78rem; color: var(--muted); font-weight: 300;
+    }
+
+    .obras-list-title {
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin: 2.5rem 0 1.5rem;
+    }
+    .obras-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+      list-style: none;
+    }
+    .obras-list li {
+      font-size: 0.85rem; color: var(--muted); font-weight: 300;
+      padding: 0.5rem 0; border-bottom: 1px solid rgba(59,130,196,0.07);
+      display: flex; align-items: baseline; gap: 0.6rem;
+    }
+    .obras-list li::before {
+      content: '—'; color: rgba(59,130,196,0.4); font-size: 0.7rem;
+    }
+
+    /* ── TIENDA ── */
+    .tienda { background: var(--navy); }
+    .tienda-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .tienda-images { display: flex; flex-direction: column; gap: 1.5rem; }
+    .tienda-images img {
+      width: 100%; height: 240px; object-fit: cover;
+      border: 1px solid rgba(59,130,196,0.15);
+    }
+    .tienda-text p {
+      font-size: 0.95rem; color: var(--muted); line-height: 1.85; font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .info-block {
+      margin-top: 1.5rem; padding: 1.5rem;
+      border: 1px solid rgba(59,130,196,0.15);
+      background: rgba(28,52,82,0.4);
+    }
+    .info-block-title {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .info-row {
+      display: flex; gap: 0.8rem; align-items: flex-start;
+      font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem;
+    }
+    .info-row svg { flex-shrink: 0; margin-top: 2px; color: var(--sky); }
+
+    /* ── CONTACTO ── */
+    .contacto { background: var(--steel); }
+    .contacto-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    }
+    .contact-locations { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-loc {
+      padding: 2rem; border: 1px solid rgba(59,130,196,0.15);
+      background: rgba(10,22,40,0.4);
+    }
+    .contact-loc h4 {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .contact-detail {
+      display: flex; gap: 0.8rem; align-items: flex-start;
+      font-size: 0.88rem; color: var(--muted); margin-bottom: 0.7rem;
+    }
+    .contact-detail svg { flex-shrink: 0; margin-top: 2px; color: var(--sky); }
+    .contact-detail a { color: var(--muted); text-decoration: none; }
+    .contact-detail a:hover { color: var(--water); }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--sky); text-decoration: none; margin-top: 0.8rem;
+      border-bottom: 1px solid transparent; padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+    .map-link:hover { border-color: var(--sky); }
+    .contact-form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem; letter-spacing: 0.05em;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .contact-form-sub {
+      font-size: 0.85rem; color: var(--muted); font-weight: 300; margin-bottom: 2rem;
+    }
+    .form-field { margin-bottom: 1.2rem; }
+    .form-field label {
+      display: block; font-size: 0.68rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem;
+    }
+    .form-field input, .form-field textarea {
+      width: 100%; padding: 0.9rem 1rem;
+      background: rgba(10,22,40,0.6);
+      border: 1px solid rgba(59,130,196,0.2);
+      color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      transition: border-color 0.2s; outline: none;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--sky); }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 3rem; background: var(--navy);
+      border-top: 1px solid rgba(59,130,196,0.1);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 0.75rem; color: var(--muted); font-weight: 300;
+    }
+    .footer-legal a {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .footer-legal a:hover { color: var(--water); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content > * {
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-eyebrow { animation-delay: 0.1s; }
+    h1 { animation-delay: 0.25s; }
+    .hero-sub { animation-delay: 0.4s; }
+    .hero-actions { animation-delay: 0.55s; }
+    .hero-stats { animation: fadeUp 1s ease 0.6s both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 0 1.5rem 4rem; }
+      .hero-stats { display: none; }
+      .section { padding: 5rem 1.5rem; }
+      .empresa-inner, .tienda-inner, .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .obras-grid { grid-template-columns: 1fr 1fr; }
+      .obras-list { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .obras-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── IMAGEN RULES ── */
+    .img-wrapper {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .empresa-image-stack {
+      display: flex;
+      gap: 16px; /* espacio entre imágenes, ajústalo a tu gusto */
+    }
+
+    .img-card {
+      flex: 1; /* hace que ambas tarjetas ocupen el mismo ancho */
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">
+    <img src="logo_cofonta.png" alt="COFONTA" style="height:42px; width:auto; display:block;">
+    <span class="brand">COFONTA</span>
+    <span class="reg">®</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio" class="active">Inicio</a></li>
+    <li><a href="#empresa">La Empresa</a></li>
+    <li><a href="#obras">Obras</a></li>
+    <li><a href="#tienda">Tienda</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Solicitar presupuesto</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-pipe"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Tenerife · Islas Canarias · Desde 1986</p>
+    <h1>Expertos en<br><em>fontanería</em><br>& instalaciones</h1>
+    <p class="hero-sub">Más de 40 años especializados en fontanería, energía solar, climatización de piscinas e instalaciones de gas en Canarias. Calidad, seguridad y garantía en cada obra.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Solicitar presupuesto</a>
+      <a href="#obras" class="btn-ghost">Ver obras realizadas</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">40<span>+</span></div>
+      <div class="stat-label">Años de experiencia</div>
+    </div>
+    <div>
+      <div class="stat-num">10K<span>+</span></div>
+      <div class="stat-label">Viviendas construidas</div>
+    </div>
+    <div>
+      <div class="stat-num">30K<span>+</span></div>
+      <div class="stat-label">Instalaciones en Canarias</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section services-bg" id="servicios">
+  <div class="section-header">
+    <p class="section-eyebrow">Nuestros servicios</p>
+    <h2>Instalación y <em>venta</em></h2>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <h3>Energía Solar Térmica</h3>
+      <p>Instalación y mantenimiento de sistemas de captación solar para agua caliente y calefacción.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/>
+      </svg>
+      <h3>Filtración y Climatización de Piscinas</h3>
+      <p>Sistemas de filtración, depuración y climatización para todo tipo de piscinas residenciales y comerciales.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M7 16.5a4.5 4.5 0 119 0c0 2.5-2 4.5-4.5 4.5S7 19 7 16.5z"/><path d="M12 7V3M9 10.5C7 9 5 7 5 5c0-2 1.5-3 3-3s3 1 3 3"/>
+      </svg>
+      <h3>Grupos de Presión y Bombeo</h3>
+      <p>Instalación de equipos de bombeo y grupos de presión para uso residencial, comercial e industrial.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+      </svg>
+      <h3>Calentadores, Calderas y Bombas de Calor</h3>
+      <p>Suministro e instalación de toda la gama de equipos de producción de agua caliente sanitaria.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <h3>Griferías y Aparatos Sanitarios</h3>
+      <p>Venta e instalación de griferías, cabinas de hidromasaje, jacuzzis y todo tipo de aparatos sanitarios.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+      </svg>
+      <h3>Calefacción: Piso Radiante y Radiadores</h3>
+      <p>Diseño e instalación de sistemas de calefacción por piso radiante, radiadores y fancoils.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+      <h3>Instalación de Gas Propano y Butano</h3>
+      <p>Instalación, revisión y mantenimiento de instalaciones de gas propano y butano. Revisiones reglamentarias.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <h3>Fontanería General</h3>
+      <p>Todo tipo de instalaciones de fontanería y saneamiento, reformas, reparaciones y mantenimiento.</p>
+    </div>
+
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+      </svg>
+      <h3>Asesoramiento y Presupuestos</h3>
+      <p>Asesoramiento técnico personalizado y presupuestos sin compromiso para cualquier tipo de instalación.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EMPRESA -->
+<section class="section empresa" id="empresa">
+  <div class="empresa-inner">
+    <div class="empresa-text">
+      <div class="section-header">
+        <p class="section-eyebrow">La empresa</p>
+        <h2>Más de dos décadas<br><em>construyendo</em> Canarias</h2>
+      </div>
+      <p>
+        <strong>COFONTA es una empresa especializada en instalaciones de fontanería, saneamiento, energía solar e instalación de gas</strong> en las Islas Canarias. Con más de 40 años en el sector, nos hemos convertido en una de las principales empresas de instalaciones de fontanería de ámbito regional.
+      </p>
+      <p>
+        Nos avalan más de <strong>10.000 viviendas construidas</strong>, complejos hoteleros, obras públicas y un gran número de reformas, siempre persiguiendo la calidad como prioridad absoluta.
+      </p>
+
+      <p style="margin-top: 2rem; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);">Política de calidad — 5 principios</p>
+      <ol class="calidad-list">
+        <li><span class="calidad-num">01</span><span>Enfoque al cliente — su satisfacción como fin último de la organización.</span></li>
+        <li><span class="calidad-num">02</span><span>Mejora continua — objetivo prioritario y permanente.</span></li>
+        <li><span class="calidad-num">03</span><span>Trabajo en equipo — compromiso personal en la obtención de la calidad.</span></li>
+        <li><span class="calidad-num">04</span><span>Utilización de materiales de primera calidad, homologados y con certificación.</span></li>
+        <li><span class="calidad-num">05</span><span>Implantación de nuevas tecnologías para la mejora de nuestra gestión empresarial.</span></li>
+      </ol>
+
+      <div class="asociaciones">
+        <p class="asociaciones-label">Empresa asociada a</p>
+        <div class="logos-row">
+          <div class="logo-badge">FEMETE</div>
+          <div class="logo-badge">CONAIF</div>
+          <div class="logo-badge">APIGASTE</div>
+        </div>
+      </div>
+    </div>
+
+   <div class="empresa-image-stack">
+     <div class="img-card">
+       <div class="img-wrapper">
+         <img src="fotos cofonta/DSC_0664c.jpg" alt="Administración COFONTA">
+         </div>
+         <div class="img-card-label">Oficina de administración — Tacoronte</div>
+     </div>
+     <div class="img-card">
+       <div class="img-wrapper">
+         <img src="fotos cofonta/DSC_1290b.JPG" alt="Tienda COFONTA El Sauzal">
+         </div>
+         <div class="img-card-label">Tienda — El Sauzal</div>
+     </div>
+    </div>
+</section>
+
+<!-- OBRAS -->
+<section class="section obras" id="obras">
+  <div class="section-header">
+    <p class="section-eyebrow">Portafolio</p>
+    <h2>Obras de <em>referencia</em></h2>
+  </div>
+
+  <div class="obras-grid">
+    <div class="obra-card">
+      <img src="ImagenesWeb/auditorio-2.jpg" alt="Auditorio de Tenerife">
+      <div class="obra-card-body">
+        <h4>Auditorio de Tenerife</h4>
+        <p>S/C de Tenerife · Thyssen Ingeniería y Sistemas, S.A.</p>
+      </div>
+    </div>
+    <div class="obra-card">
+      <img src="ImagenesWeb/TorreSCTF.jpg" alt="Torre Uno de S/C de Tenerife">
+      <div class="obra-card-body">
+        <h4>Torre Uno de S/C de Tenerife</h4>
+        <p>S/C de Tenerife · Ferrovial Agroman, S.A.</p>
+      </div>
+    </div>
+    <div class="obra-card">
+      <img src="ImagenesWeb/normal_MeliaJardinesDelTeide02-Pool.jpg" alt="Hotel Jardines del Teide">
+      <div class="obra-card-body">
+        <h4>Hotel Meliá Jardines del Teide</h4>
+        <p>Fañabé (Adeje) · El Caobo, S.L.</p>
+      </div>
+    </div>
+    <div class="obra-card">
+      <img src="ImagenesWeb/HotelAtlantida.jpg" alt="Hotel Silken Atlántida">
+      <div class="obra-card-body">
+        <h4>Hotel Silken Atlántida</h4>
+        <p>S/C de Tenerife · Candesa, S.A.</p>
+      </div>
+    </div>
+    <div class="obra-card">
+      <img src="ImagenesWeb/AtlanticGolf2.jpg" alt="Residencial Atlantic Golf">
+      <div class="obra-card-body">
+        <h4>Residencial Atlantic Golf</h4>
+        <p>San Miguel de Abona · 798 viviendas</p>
+      </div>
+    </div>
+    <div class="obra-card">
+      <img src="ImagenesWeb/GabrielaII.jpg" alt="Residencial Gabriela">
+      <div class="obra-card-body">
+        <h4>Residencial Gabriela I, II y III</h4>
+        <p>Avda. Los Menceyes, Candelaria</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="obras-list-title">Más obras realizadas</p>
+  <ul class="obras-list">
+    <li>Reforma integral Hotel Maritim, Puerto de la Cruz</li>
+    <li>Centro para Mayores Los Realejos (Nigrocon, S.L.)</li>
+    <li>Centro para Mayores Santa Úrsula (Nigrocon, S.L.)</li>
+    <li>Colegio Echey 1, Ofra (Nigrocon, S.L.)</li>
+    <li>Centro para Mayores en Candelaria</li>
+    <li>Nuevo Mercado Municipal de Tacoronte</li>
+    <li>Resd. La Graciosa, Puertito de Güimar · 112 viviendas</li>
+    <li>Resd. Alegranza, Puertito de Güimar · 104 viviendas</li>
+    <li>Resd. Roque de Garachico · 122 viviendas</li>
+    <li>Resd. Elena, Candelaria · 285 viviendas</li>
+    <li>Edf. Rambla, Candelaria · 212 viviendas</li>
+    <li>Resd. Carolina, Candelaria · 270 viviendas</li>
+    <li>300 viviendas VPO La Atalaya, Tacoronte</li>
+    <li>63 viviendas VPO Polígono El Rosario (OHL)</li>
+  </ul>
+
+  <div style="margin-top:2.5rem;">
+    <a href="curriculum cofonta.pdf" class="btn-ghost" download>
+      Descargar Currículum de Empresa (PDF)
+    </a>
+  </div>
+</section>
+
+<!-- TIENDA -->
+<section class="section tienda" id="tienda">
+  <div class="tienda-inner">
+    <div class="tienda-images">
+      <img src="fotos cofonta/DSC_1275.JPG" alt="Tienda COFONTA El Sauzal">
+      <img src="fotos cofonta/DSC_1278.JPG" alt="Interior tienda COFONTA">
+    </div>
+    <div class="tienda-text">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <p class="section-eyebrow">Tienda</p>
+        <h2>Materiales y<br><em>showroom</em></h2>
+      </div>
+      <p>Nuestra tienda en El Sauzal es un espacio donde podrá ver y elegir entre una amplia selección de griferías, aparatos sanitarios, cabinas de hidromasaje, equipos de calefacción y todo lo necesario para su instalación.</p>
+      <p>Nuestro equipo le asesorará para encontrar la solución más adecuada a sus necesidades y presupuesto.</p>
+
+      <div class="info-block">
+        <p class="info-block-title">Tienda El Sauzal</p>
+        <div class="info-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ctra. General del Norte TF-152, 64 Local 1 — 38360 El Sauzal, Tenerife
+        </div>
+        <div class="info-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.68 9.84a19.79 19.79 0 01-3.07-8.67A2 2 0 013.59 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.56a16 16 0 006.29 6.29l1.62-.87a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          922 561 142
+        </div>
+        <div class="info-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:tienda@cofonta.com">tienda@cofonta.com></a>
+        </div>
+        <a href="mapatiendasauzal.html" class="map-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver en el mapa
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contacto" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <p class="section-eyebrow">Contacto</p>
+        <h2>Hablemos de<br>su <em>proyecto</em></h2>
+      </div>
+      <div class="contact-locations">
+
+        <div class="contact-loc">
+          <h4>Administración</h4>
+          <div class="contact-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Calle Las Higueras, 8 Local 4 - Edf. Alicia II<br>38350 Tacoronte (Tenerife)
+          </div>
+          <div class="contact-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.68 9.84a19.79 19.79 0 01-3.07-8.67A2 2 0 013.59 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.56a16 16 0 006.29 6.29l1.62-.87a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:922563501">922 563 501</a>
+          </div>
+          <div class="contact-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:cofonta-oficina@cofonta.com">cofonta-oficina@cofonta.com</a>
+          </div>
+          <a href="mapaoficina.html" class="map-link">Ver en el mapa →</a>
+        </div>
+
+        <div class="contact-loc">
+          <h4>Almacén Central</h4>
+          <div class="contact-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Calle La Cuesta 4B - Edf. Cofonta I<br>38350 Tacoronte (Tenerife)
+          </div>
+          <div class="contact-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.68 9.84a19.79 19.79 0 01-3.07-8.67A2 2 0 013.59 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.56a16 16 0 006.29 6.29l1.62-.87a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:922571770">922 571 770</a>
+          </div>
+          <div class="contact-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:cofonta-almacen@cofonta.com">cofonta-almacen@cofonta.com</a>
+          </div>
+          <a href="mapaalmacen.html" class="map-link">Ver en el mapa →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <p class="contact-form-title">Solicitar<br>presupuesto</p>
+      <p class="contact-form-sub">Le responderemos a la mayor brevedad posible.</p>
+      <div id="form-success" style="display:none; padding:1.2rem; background:rgba(59,130,196,0.12); border:1px solid rgba(59,130,196,0.4); margin-bottom:1.5rem; font-size:0.88rem; color:var(--water); line-height:1.6;">
+        ✓ Su correo ha sido preparado. Si su cliente de correo no se ha abierto automáticamente, escríbanos directamente a <a href="mailto:cofonta-oficina@cofonta.com">cofonta-oficina@cofonta.com</a>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="f-nombre">Nombre</label>
+          <input type="text" id="f-nombre" placeholder="Su nombre">
+        </div>
+        <div class="form-field">
+          <label for="f-telefono">Teléfono</label>
+          <input type="tel" id="f-telefono" placeholder="6XX XXX XXX">
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="f-email">Email de contacto</label>
+        <input type="email" id="f-email" placeholder="correo@ejemplo.com">
+      </div>
+      <div class="form-field">
+        <label for="f-servicio">Tipo de instalación</label>
+        <input type="text" id="f-servicio" placeholder="Fontanería, solar, gas...">
+      </div>
+      <div class="form-field">
+        <label for="f-mensaje">Descripción del proyecto</label>
+        <textarea id="f-mensaje" placeholder="Cuéntenos en qué podemos ayudarle..."></textarea>
+      </div>
+      <button id="btn-enviar" class="btn-primary" style="width:100%; border:none; font-family:'DM Sans',sans-serif; font-size:0.82rem; letter-spacing:0.12em; cursor:pointer;">
+        Enviar solicitud →
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="nav-logo" style="text-decoration:none;">
+    <img src="logo_cofonta.png" alt="COFONTA" style="height:36px; width:auto;">
+    <span class="brand" style="font-size:1.3rem;">COFONTA</span>
+    <span class="reg">®</span>
+  </div>
+  <p class="footer-copy">© 2026 COFONTA, S.L. — Las Higueras, 8 local 4, 38350 Tacoronte, Tenerife (España) &nbsp;·&nbsp; Diseñado por Fabián Viera</p>
+<div class="footer-legal">
+    <a href="aviso-legal.html">Aviso Legal</a>
+    <a href="politica-privacidad.html">Privacidad</a>
+    <a href="politica-cookies.html">Cookies</a>
+    <a href="politica-calidad.html">Calidad</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+
+  // Formulario de contacto — abre cliente de correo con los datos
+  document.getElementById('btn-enviar').addEventListener('click', function() {
+    const nombre   = document.getElementById('f-nombre').value.trim();
+    const telefono = document.getElementById('f-telefono').value.trim();
+    const email    = document.getElementById('f-email').value.trim();
+    const servicio = document.getElementById('f-servicio').value.trim();
+    const mensaje  = document.getElementById('f-mensaje').value.trim();
+
+    if (!nombre && !mensaje) {
+      alert('Por favor, rellene al menos su nombre y la descripción del proyecto.');
+      return;
+    }
+
+    const asunto = 'Solicitud de presupuesto — ' + (servicio || 'Instalación');
+    const cuerpo =
+      'Estimado equipo de COFONTA,\n\n' +
+      'Les contacto para solicitar información / presupuesto:\n\n' +
+      'Nombre:       ' + (nombre   || '—') + '\n' +
+      'Teléfono:     ' + (telefono || '—') + '\n' +
+      'Email:        ' + (email    || '—') + '\n' +
+      'Instalación:  ' + (servicio || '—') + '\n\n' +
+      'Descripción:\n' + (mensaje  || '—') + '\n\nGracias.';
+
+    window.location.href =
+      'mailto:cofonta-oficina@cofonta.com' +
+      '?subject=' + encodeURIComponent(asunto) +
+      '&body='    + encodeURIComponent(cuerpo);
+
+    const ok = document.getElementById('form-success');
+    ok.style.display = 'block';
+    ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>
+
+</body>
+</html>

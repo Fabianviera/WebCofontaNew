@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Calidad — COFONTA®</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0a1628; --steel: #1c3452; --blue: #1a56a0; --sky: #3b82c4; --water: #7eb8d4; --white: #f5f9fc; --gold: #c9a84c; --muted: #8aafc8; --text: #e8f0f7; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(10,22,40,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(59,130,196,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo .brand { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.12em; color: var(--white); }
+    .nav-logo .reg { font-size: 0.75rem; color: var(--gold); vertical-align: super; }
+    .nav-back { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+    .page-hero { padding: 10rem 3rem 4rem; background: linear-gradient(160deg, var(--navy) 0%, #0d2040 100%); border-bottom: 1px solid rgba(59,130,196,0.1); }
+    .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+    .page-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.05em; color: var(--white); line-height: 1; }
+    h1 em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--water); }
+    .page-updated { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; font-weight: 300; }
+    .legal-body { max-width: 860px; margin: 0 auto; padding: 5rem 3rem; }
+    .legal-section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(59,130,196,0.1); }
+    .legal-section:last-child { border-bottom: none; }
+    h2 { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    h2::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem; margin-top: 1.8rem; }
+    p { font-size: 0.92rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+    p strong { color: var(--water); font-weight: 500; }
+    a { color: var(--sky); }
+
+    .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+    .principle-card {
+      padding: 2rem; background: rgba(28,52,82,0.4);
+      border: 1px solid rgba(59,130,196,0.15);
+      position: relative; overflow: hidden;
+    }
+    .principle-card::before {
+      content: attr(data-num);
+      position: absolute; top: -0.5rem; right: 1rem;
+      font-family: 'Bebas Neue', sans-serif; font-size: 5rem;
+      color: rgba(59,130,196,0.07); line-height: 1; pointer-events: none;
+    }
+    .principle-card h4 { font-size: 0.88rem; font-weight: 500; color: var(--sky); margin-bottom: 0.6rem; }
+    .principle-card p { font-size: 0.85rem; margin: 0; }
+
+    .objectives-list { list-style: none; margin-top: 1rem; }
+    .objectives-list li {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.1rem 0; border-bottom: 1px solid rgba(59,130,196,0.1);
+      font-size: 0.9rem; color: var(--muted); font-weight: 300; line-height: 1.6;
+    }
+    .objectives-list li:last-child { border-bottom: none; }
+    .obj-icon { color: var(--sky); flex-shrink: 0; margin-top: 2px; }
+
+    .security-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .security-card { padding: 1.5rem; background: rgba(28,52,82,0.4); border: 1px solid rgba(59,130,196,0.12); text-align: center; }
+    .security-card .s-icon { color: var(--gold); margin-bottom: 0.8rem; }
+    .security-card h4 { font-size: 0.82rem; font-weight: 500; color: var(--white); margin-bottom: 0.4rem; }
+    .security-card p { font-size: 0.8rem; margin: 0; }
+
+    .signature-block { margin-top: 3rem; padding: 2rem; border: 1px solid rgba(59,130,196,0.2); background: rgba(28,52,82,0.3); }
+    .sig-title { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .sig-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.08em; color: var(--white); }
+    .sig-role { font-size: 0.82rem; color: var(--muted); font-weight: 300; margin-top: 0.3rem; }
+    .sig-place { font-size: 0.8rem; color: var(--muted); font-weight: 300; margin-top: 0.8rem; }
+
+    footer { padding: 2rem 3rem; background: var(--navy); border-top: 1px solid rgba(59,130,196,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .footer-legal a:hover { color: var(--water); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .page-hero, .legal-body { padding-left: 1.5rem; padding-right: 1.5rem; } .principles-grid, .security-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_cofonta.png" alt="Logo COFONTA" style="height:42px;width:auto;">
+    <span class="brand">COFONTA</span><span class="reg">®</span>
+  </a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="page-hero">
+  <p class="page-eyebrow">Compromiso con la excelencia</p>
+  <h1>Política de <em>Calidad</em></h1>
+  <p class="page-updated">Revisión: enero de 2025 · COFONTA, S.L. — NIF B-38795860</p>
+</div>
+
+<div class="legal-body">
+
+  <div class="legal-section">
+    <h2>Declaración de política de calidad</h2>
+    <p>COFONTA, S.L. es una empresa especializada en instalaciones de fontanería, saneamiento, energía solar térmica, instalaciones de gas y trabajos afines en las Islas Canarias, con más de 24 años de experiencia en el sector.</p>
+    <p>La Dirección de COFONTA, S.L. considera que <strong>el compromiso con la calidad es un requisito fundamental para la continuidad y el crecimiento de la empresa</strong>. Nuestro objetivo final es la <strong>Calidad Total</strong> en todas y cada una de las obras e instalaciones que realizamos.</p>
+    <p>Esta Política de Calidad es de aplicación a todas las actividades, procesos, instalaciones y servicios de COFONTA, S.L., y es de obligado conocimiento y cumplimiento para todo el personal de la empresa, así como para los colaboradores externos que actúen en su nombre.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Principios fundamentales</h2>
+    <p>La gestión de la calidad en COFONTA, S.L. se asienta sobre cinco principios irrenunciables:</p>
+    <div class="principles-grid">
+      <div class="principle-card" data-num="01">
+        <h4>Enfoque al cliente</h4>
+        <p>La satisfacción del cliente es el fin último de nuestra organización. Escuchamos sus necesidades, ofrecemos asesoramiento técnico personalizado y garantizamos el resultado de nuestros trabajos.</p>
+      </div>
+      <div class="principle-card" data-num="02">
+        <h4>Mejora continua</h4>
+        <p>La mejora continua de nuestros procesos, servicios y métodos de trabajo es un objetivo prioritario y permanente. Revisamos periódicamente nuestros procedimientos para detectar oportunidades de mejora.</p>
+      </div>
+      <div class="principle-card" data-num="03">
+        <h4>Trabajo en equipo</h4>
+        <p>La calidad es responsabilidad de toda la organización. Fomentamos la implicación personal de cada trabajador en la obtención de la calidad, la comunicación interna y la formación continua.</p>
+      </div>
+      <div class="principle-card" data-num="04">
+        <h4>Materiales de primera calidad</h4>
+        <p>Utilizamos exclusivamente materiales homologados, con certificación de calidad y conformes a la normativa técnica vigente. Trabajamos con proveedores seleccionados por su fiabilidad y calidad.</p>
+      </div>
+    </div>
+    <div class="principle-card" data-num="05" style="margin-top:0; padding:2rem; background:rgba(28,52,82,0.4); border:1px solid rgba(59,130,196,0.15); position:relative; overflow:hidden;">
+      <h4 style="font-size:0.88rem; font-weight:500; color:var(--sky); margin-bottom:0.6rem;">Implantación de nuevas tecnologías</h4>
+      <p style="font-size:0.85rem; margin:0; color:var(--muted); font-weight:300; line-height:1.7;">Apostamos por la incorporación de nuevas tecnologías para la mejora de nuestra gestión empresarial y de nuestros productos y servicios, manteniéndonos actualizados ante los avances del sector.</p>
+    </div>
+  </div>
+
+  <div class="legal-section">
+    <h2>Objetivos de calidad</h2>
+    <p>Para materializar estos principios, COFONTA, S.L. establece los siguientes objetivos:</p>
+    <ul class="objectives-list">
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Cumplir escrupulosamente la normativa técnica aplicable a cada tipo de instalación (fontanería, gas, energía solar, piscinas, etc.), así como las especificaciones acordadas con el cliente.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Alcanzar y mantener el máximo nivel de satisfacción de nuestros clientes, medida mediante encuestas, reclamaciones y seguimiento postventa.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Cumplir los plazos de ejecución comprometidos con el cliente, mediante una planificación rigurosa de los trabajos.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Reducir al mínimo el número de no conformidades, incidencias y reclamaciones, analizando sus causas y adoptando acciones correctoras eficaces.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Mantener a todo el personal técnico permanentemente formado y actualizado ante los cambios normativos y tecnológicos del sector.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Seleccionar y evaluar periódicamente a los proveedores de materiales y subcontratistas para garantizar que cumplen nuestros estándares de calidad.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Avanzar progresivamente hacia la implantación de un Sistema de Gestión de la Calidad conforme a la norma UNE-EN ISO 9001.
+      </li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h2>Política de seguridad y salud en el trabajo</h2>
+    <p>La seguridad y la salud de nuestros trabajadores son valores no negociables en COFONTA, S.L. La empresa dispone de una <strong>Evaluación Inicial de Riesgos Laborales</strong> que contempla todas las actividades desarrolladas, y elabora un estudio y valoración de riesgos específico para cada obra.</p>
+
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="s-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Siniestralidad cero</h4>
+        <p>Objetivo de índice de siniestralidad del 0% mediante formación, planificación y equipos de protección adecuados.</p>
+      </div>
+      <div class="security-card">
+        <div class="s-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h4>Formación continua</h4>
+        <p>Formación e información periódica de todos los trabajadores en materia de prevención, seguridad y salud laboral.</p>
+      </div>
+      <div class="security-card">
+        <div class="s-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>Seguros y cobertura</h4>
+        <p>Póliza de Responsabilidad Civil vigente y todos los seguros obligatorios de convenio colectivo del sector.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;">Para cada obra se realiza una <strong>planificación de la actividad preventiva</strong> que incluye la identificación de riesgos específicos, las medidas de protección colectiva e individual, y la coordinación de actividades empresariales con el cliente o promotor.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Política medioambiental</h2>
+    <p>COFONTA, S.L. se compromete a desarrollar su actividad con el menor impacto ambiental posible, cumpliendo en todo momento la legislación medioambiental aplicable. Para ello:</p>
+    <ul class="objectives-list">
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Promovemos la instalación de sistemas de energía renovable (solar térmica, bombas de calor) y equipos de alta eficiencia energética entre nuestros clientes.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Gestionamos correctamente los residuos generados en las obras, separando y entregando los materiales a gestores autorizados conforme a la normativa vigente.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Fomentamos el uso eficiente del agua en todas las instalaciones que realizamos, incorporando griferías y sistemas de bajo consumo cuando el cliente así lo demanda.
+      </li>
+      <li>
+        <svg class="obj-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Trabajamos con proveedores comprometidos con la sostenibilidad y con materiales con certificaciones ambientales cuando están disponibles.
+      </li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h2>Revisión y difusión</h2>
+    <p>Esta Política de Calidad es aprobada y firmada por la Dirección de COFONTA, S.L., que asume el compromiso de proporcionar los recursos necesarios para su cumplimiento. Es revisada anualmente o cuando se produzcan cambios significativos en la empresa o en el contexto normativo.</p>
+    <p>La Dirección se compromete a comunicar esta Política a todo el personal de la empresa, así como a ponerla a disposición de las partes interesadas que lo soliciten.</p>
+
+    <div class="signature-block">
+      <p class="sig-title">Aprobado por la Dirección</p>
+      <p class="sig-name">COFONTA, S.L.</p>
+      <p class="sig-role">Gerencia</p>
+      <p class="sig-place">Tacoronte (Tenerife), marzo de 2026</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:0.7rem;">
+    <img src="logo_cofonta.png" alt="COFONTA" style="height:34px;width:auto;">
+    <span style="font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:#f5f9fc; letter-spacing:0.12em;">COFONTA</span>
+    <span style="font-size:0.7rem; color:#c9a84c; vertical-align:super;">®</span>
+  </div>
+  <p class="footer-copy">© 2026 COFONTA, S.L. — Las Higueras, 8 local 4, 38350 Tacoronte, Tenerife (España) &nbsp;·&nbsp; Diseñado por Fabián Viera</p>
+  <div class="footer-legal">
+    <a href="aviso-legal.html">Aviso Legal</a>
+    <a href="politica-privacidad.html">Privacidad</a>
+    <a href="politica-cookies.html">Cookies</a>
+    <a href="politica-calidad.html">Calidad</a>
+  </div>
+</footer>
+
+</body>
+</html>
