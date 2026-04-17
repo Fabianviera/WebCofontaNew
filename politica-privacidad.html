@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — COFONTA®</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0a1628; --steel: #1c3452; --blue: #1a56a0; --sky: #3b82c4; --water: #7eb8d4; --white: #f5f9fc; --gold: #c9a84c; --muted: #8aafc8; --text: #e8f0f7; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(10,22,40,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(59,130,196,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo .brand { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.12em; color: var(--white); }
+    .nav-logo .reg { font-size: 0.75rem; color: var(--gold); vertical-align: super; }
+    .nav-back { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+    .page-hero { padding: 10rem 3rem 4rem; background: linear-gradient(160deg, var(--navy) 0%, #0d2040 100%); border-bottom: 1px solid rgba(59,130,196,0.1); }
+    .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+    .page-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.05em; color: var(--white); line-height: 1; }
+    h1 em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--water); }
+    .page-updated { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; font-weight: 300; }
+    .legal-body { max-width: 860px; margin: 0 auto; padding: 5rem 3rem; }
+    .legal-section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(59,130,196,0.1); }
+    .legal-section:last-child { border-bottom: none; }
+    h2 { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    h2::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem; margin-top: 1.5rem; }
+    p { font-size: 0.92rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+    p strong { color: var(--water); font-weight: 500; }
+    a { color: var(--sky); }
+    .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .data-table th { padding: 0.7rem 1rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-align: left; border-bottom: 1px solid rgba(201,168,76,0.3); }
+    .data-table td { padding: 0.85rem 1rem; font-size: 0.88rem; border-bottom: 1px solid rgba(59,130,196,0.08); vertical-align: top; color: var(--muted); font-weight: 300; line-height: 1.6; }
+    .data-table td:first-child { color: var(--white); font-weight: 400; }
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .right-card { padding: 1.2rem; background: rgba(28,52,82,0.4); border: 1px solid rgba(59,130,196,0.15); }
+    .right-card h4 { font-size: 0.8rem; font-weight: 500; color: var(--sky); margin-bottom: 0.4rem; }
+    .right-card p { font-size: 0.82rem; margin: 0; }
+    .info-box { padding: 1.5rem; background: rgba(28,52,82,0.4); border: 1px solid rgba(59,130,196,0.2); border-left: 3px solid var(--gold); margin: 1.5rem 0; }
+    .info-box p { margin: 0; font-size: 0.88rem; }
+    footer { padding: 2rem 3rem; background: var(--navy); border-top: 1px solid rgba(59,130,196,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .footer-legal a:hover { color: var(--water); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .page-hero, .legal-body { padding-left: 1.5rem; padding-right: 1.5rem; } .rights-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_cofonta.png" alt="Logo COFONTA" style="height:42px;width:auto;">
+    <span class="brand">COFONTA</span><span class="reg">®</span>
+  </a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="page-hero">
+  <p class="page-eyebrow">Protección de datos</p>
+  <h1>Política de <em>Privacidad</em></h1>
+  <p class="page-updated">Última actualización: marzo de 2026 · Conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD)</p>
+</div>
+
+<div class="legal-body">
+
+  <div class="legal-section">
+    <h2>1. Responsable del tratamiento</h2>
+    <table class="data-table">
+      <tr><td>Responsable</td><td>COFONTA, S.L.</td></tr>
+      <tr><td>NIF</td><td>B-38795860</td></tr>
+      <tr><td>Dirección</td><td>Calle Las Higueras, n.º 8, Local 4, Edif. Alicia II — 38350 Tacoronte (Tenerife)</td></tr>
+      <tr><td>Teléfono</td><td>922 563 501</td></tr>
+      <tr><td>Email de contacto</td><td><a href="mailto:cofonta-oficina@cofonta.com">cofonta-oficina@cofonta.com</a></td></tr>
+    </table>
+    <p>COFONTA, S.L. no está obligada a designar un Delegado de Protección de Datos (DPD) conforme al artículo 37 del RGPD. Para cualquier cuestión relacionada con el tratamiento de sus datos puede dirigirse a la dirección de correo indicada.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>2. Finalidades, bases jurídicas y plazos de conservación</h2>
+    <p>COFONTA, S.L. trata sus datos personales para las siguientes finalidades:</p>
+    <table class="data-table">
+      <tr>
+        <th>Finalidad</th>
+        <th>Base jurídica</th>
+        <th>Plazo de conservación</th>
+      </tr>
+      <tr>
+        <td>Atender consultas y solicitudes de presupuesto enviadas a través del formulario web o por email</td>
+        <td>Ejecución de medidas precontractuales a petición del interesado (art. 6.1.b RGPD)</td>
+        <td>Hasta la resolución de la consulta y durante 1 año adicional</td>
+      </tr>
+      <tr>
+        <td>Gestión de la relación contractual con clientes y proveedores</td>
+        <td>Ejecución del contrato (art. 6.1.b RGPD)</td>
+        <td>Duración del contrato y 5 años adicionales (obligaciones mercantiles) / 4 años (obligaciones fiscales)</td>
+      </tr>
+      <tr>
+        <td>Cumplimiento de obligaciones legales (contables, fiscales, laborales)</td>
+        <td>Obligación legal (art. 6.1.c RGPD)</td>
+        <td>Según los plazos establecidos por la normativa aplicable (generalmente 4-10 años)</td>
+      </tr>
+      <tr>
+        <td>Envío de comunicaciones comerciales sobre nuestros servicios a clientes existentes</td>
+        <td>Interés legítimo (art. 6.1.f RGPD) / consentimiento (art. 6.1.a RGPD)</td>
+        <td>Hasta que retire su consentimiento u objete al tratamiento</td>
+      </tr>
+      <tr>
+        <td>Análisis de navegación y mejora del sitio web (cookies analíticas)</td>
+        <td>Consentimiento (art. 6.1.a RGPD)</td>
+        <td>Según la Política de Cookies</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="legal-section">
+    <h2>3. Destinatarios y transferencias internacionales</h2>
+    <p>Sus datos no serán cedidos a terceros salvo en los siguientes supuestos:</p>
+    <p><strong>Encargados del tratamiento:</strong> proveedores de servicios informáticos, plataformas de email, gestoría y asesoría, que actúan bajo contrato de encargado del tratamiento y con las garantías adecuadas conforme al RGPD.</p>
+    <p><strong>Obligación legal:</strong> cuando sea necesario para cumplir con una obligación legal (Agencia Tributaria, Seguridad Social, juzgados y tribunales, etc.).</p>
+    <p>Con carácter general, COFONTA, S.L. no realiza transferencias internacionales de datos fuera del Espacio Económico Europeo. En caso de que algún proveedor de servicios esté ubicado fuera del EEE, nos aseguramos de que existan las garantías adecuadas (cláusulas contractuales tipo aprobadas por la Comisión Europea u otro mecanismo válido).</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>4. Sus derechos</h2>
+    <p>En virtud del RGPD y la LOPDGDD, puede ejercitar los siguientes derechos sobre sus datos personales:</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <h4>Acceso</h4>
+        <p>Obtener confirmación sobre si tratamos sus datos y acceder a ellos.</p>
+      </div>
+      <div class="right-card">
+        <h4>Rectificación</h4>
+        <p>Solicitar la corrección de datos inexactos o incompletos.</p>
+      </div>
+      <div class="right-card">
+        <h4>Supresión («derecho al olvido»)</h4>
+        <p>Solicitar la eliminación de sus datos cuando ya no sean necesarios o retire su consentimiento.</p>
+      </div>
+      <div class="right-card">
+        <h4>Limitación del tratamiento</h4>
+        <p>Solicitar que suspendamos el tratamiento de sus datos en determinadas circunstancias.</p>
+      </div>
+      <div class="right-card">
+        <h4>Portabilidad</h4>
+        <p>Recibir sus datos en formato estructurado y de uso común para transmitirlos a otro responsable.</p>
+      </div>
+      <div class="right-card">
+        <h4>Oposición</h4>
+        <p>Oponerse al tratamiento basado en interés legítimo o con fines de marketing directo.</p>
+      </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Para ejercitar cualquiera de estos derechos, diríjase por escrito a <a href="mailto:cofonta-oficina@cofonta.com">cofonta-oficina@cofonta.com</a> o a nuestra dirección postal, acompañando copia de su DNI u otro documento identificativo. Responderemos en el plazo máximo de un mes (prorrogable dos meses más en casos complejos).</p>
+    <div class="info-box">
+      <p>Si considera que el tratamiento de sus datos no es conforme a la normativa, tiene derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a> o en C/ Jorge Juan, 6 — 28001 Madrid.</p>
+    </div>
+  </div>
+
+  <div class="legal-section">
+    <h2>5. Procedencia de los datos y obligatoriedad</h2>
+    <p>Los datos personales que tratamos proceden de los propios interesados, quienes los facilitan a través del formulario de contacto del Sitio Web, por teléfono, email, o en el marco de la relación contractual.</p>
+    <p>Los campos marcados como obligatorios en el formulario de contacto son necesarios para atender su solicitud. La no cumplimentación de dichos campos impedirá tramitar su solicitud, sin que ello implique ninguna consecuencia negativa adicional para el interesado.</p>
+    <p>El interesado garantiza que los datos facilitados son verídicos, exactos y completos, y que comunicará a COFONTA, S.L. cualquier modificación que se produzca.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>6. Medidas de seguridad</h2>
+    <p>COFONTA, S.L. ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>7. Uso de cookies</h2>
+    <p>Este Sitio Web utiliza cookies propias y de terceros. Para más información, consulte nuestra <a href="politica-cookies.html">Política de Cookies</a>.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>8. Modificaciones de esta política</h2>
+    <p>COFONTA, S.L. se reserva el derecho a modificar la presente Política de Privacidad para adaptarla a novedades legislativas, jurisprudenciales o de práctica empresarial. En dichos supuestos, se anunciará en el Sitio Web los cambios introducidos con razonable antelación a su puesta en práctica.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:0.7rem;">
+    <img src="logo_cofonta.png" alt="COFONTA" style="height:34px;width:auto;">
+    <span style="font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:#f5f9fc; letter-spacing:0.12em;">COFONTA</span>
+    <span style="font-size:0.7rem; color:#c9a84c; vertical-align:super;">®</span>
+  </div>
+  <p class="footer-copy">© 2026 COFONTA, S.L. — Las Higueras, 8 local 4, 38350 Tacoronte, Tenerife (España) &nbsp;·&nbsp; Diseñado por Fabián Viera</p>
+  <div class="footer-legal">
+    <a href="aviso-legal.html">Aviso Legal</a>
+    <a href="politica-privacidad.html">Privacidad</a>
+    <a href="politica-cookies.html">Cookies</a>
+    <a href="politica-calidad.html">Calidad</a>
+  </div>
+</footer>
+
+</body>
+</html>
