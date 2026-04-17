@@ -6,45 +6,7 @@
   <title>Ubicación Almacén — COFONTA®</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy: #0a1628; --steel: #1c3452; --sky: #3b82c4; --water: #7eb8d4; --white: #f5f9fc; --gold: #c9a84c; --muted: #8aafc8; --text: #e8f0f7; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(10,22,40,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(59,130,196,0.15); }
-    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
-    .nav-logo img { height: 42px; width: auto; }
-    .nav-logo .brand { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.12em; color: var(--white); }
-    .nav-logo .reg { font-size: 0.75rem; color: var(--gold); vertical-align: super; }
-    .nav-back { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
-    .nav-back:hover { color: var(--white); }
-    .page-hero { padding: 9rem 3rem 3rem; background: linear-gradient(160deg, var(--navy) 0%, #0d2040 100%); border-bottom: 1px solid rgba(59,130,196,0.1); }
-    .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem; }
-    .page-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
-    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 0.05em; color: var(--white); line-height: 1; }
-    h1 em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--water); }
-    .main { flex: 1; padding: 3rem; display: grid; grid-template-columns: 1fr 340px; gap: 3rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-    .map-container { border: 1px solid rgba(59,130,196,0.2); overflow: hidden; }
-    .map-container iframe { display: block; width: 100%; height: 500px; border: none; }
-    .info-panel { display: flex; flex-direction: column; gap: 1.5rem; }
-    .info-card { padding: 1.8rem; background: var(--steel); border: 1px solid rgba(59,130,196,0.15); }
-    .info-card-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
-    .info-card-label::before { content: ''; width: 16px; height: 1px; background: var(--gold); }
-    .info-row { display: flex; gap: 0.9rem; align-items: flex-start; font-size: 0.88rem; color: var(--muted); margin-bottom: 0.85rem; font-weight: 300; line-height: 1.65; }
-    .info-row:last-child { margin-bottom: 0; }
-    .info-row svg { flex-shrink: 0; margin-top: 2px; color: var(--sky); }
-    .info-row a { color: var(--sky); text-decoration: none; }
-    .info-row a:hover { color: var(--water); }
-    .btn-primary { display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.6rem; background: var(--sky); color: var(--white); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.25s; }
-    .btn-primary:hover { background: var(--water); color: var(--navy); }
-    .btn-ghost { display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.6rem; background: transparent; color: var(--muted); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(139,175,200,0.3); transition: all 0.25s; }
-    .btn-ghost:hover { border-color: var(--muted); color: var(--white); }
-    footer { padding: 2rem 3rem; background: var(--navy); border-top: 1px solid rgba(59,130,196,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-copy { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
-    .footer-legal { display: flex; gap: 1.5rem; }
-    .footer-legal a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
-    .footer-legal a:hover { color: var(--water); }
-    @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .page-hero { padding: 7rem 1.5rem 2.5rem; } .main { grid-template-columns: 1fr; padding: 2rem 1.5rem; } .map-container iframe { height: 320px; } footer { padding: 1.5rem; flex-direction: column; text-align: center; } .footer-legal { justify-content: center; } }
-  </style>
+  <link rel="stylesheet" href="styles-maps.css">
 </head>
 <body>
 
