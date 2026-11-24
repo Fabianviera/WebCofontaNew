@@ -126,7 +126,7 @@ footer {
   border-bottom: 1px solid rgba(59,130,196,0.25);
 }
 .data-table--cols td:first-child { white-space: normal; width: auto; }
-.data-table--cols td { overflow-wrap: anywhere; }
+.data-table--cols td { overflow-wrap: break-word; }
 
 /* ── TABLAS EN MÓVIL Y TABLET ── */
 @media (max-width: 768px) {
