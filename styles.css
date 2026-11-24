@@ -551,3 +551,15 @@ h1 { animation-delay: 0.25s; }
   .form-row { grid-template-columns: 1fr; }
   .cookie-banner { right: 0.8rem; left: 0.8rem; width: auto; bottom: 0.8rem; }
 }
+
+/* ── SELLO 40 ANIVERSARIO ── */
+.nav-40-sep {
+  width: 1px; height: 34px; align-self: center;
+  background: rgba(126,184,212,0.35);
+  margin: 0 0.9rem 0 0.7rem;
+}
+.nav-logo img.nav-40 { height: 42px; width: auto; display: block; align-self: center; }
+@media (max-width: 380px) {
+  .nav-40-sep { margin: 0 0.5rem 0 0.4rem; }
+  .nav-logo img.nav-40 { height: 36px; }
+}

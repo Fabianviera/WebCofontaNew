@@ -91,3 +91,30 @@ footer {
   footer { padding: 1.5rem; flex-direction: column; text-align: center; }
   .footer-legal { justify-content: center; }
 }
+
+/* ── SELLO 40 ANIVERSARIO ── */
+.nav-40-sep {
+  width: 1px; height: 34px; align-self: center;
+  background: rgba(126,184,212,0.35);
+  margin: 0 0.9rem 0 0.7rem;
+}
+.nav-logo img.nav-40 { height: 42px; width: auto; display: block; align-self: center; }
+@media (max-width: 600px) {
+  .nav-logo { gap: 0.45rem; }
+  .nav-logo .brand { font-size: 1.6rem; letter-spacing: 0.08em; }
+  .nav-40-sep { height: 28px; margin: 0 0.5rem 0 0.3rem; }
+  .nav-logo img.nav-40 { height: 34px; }
+  .nav-back { white-space: nowrap; font-size: 0.7rem; letter-spacing: 0.06em; }
+}
+@media (max-width: 380px) {
+  nav { padding: 1rem 1rem; }
+  .nav-logo img:not(.nav-40) { height: 34px !important; }
+  .nav-logo .brand { font-size: 1.35rem; }
+  .nav-40-sep { margin: 0 0.4rem 0 0.2rem; }
+  .nav-logo img.nav-40 { height: 30px; }
+}
+@media (max-width: 360px) {
+  nav { padding: 1rem 0.75rem; }
+  .nav-back { font-size: 0.62rem; letter-spacing: 0.02em; gap: 0.25rem; }
+  .nav-back svg { width: 11px; height: 11px; }
+}
