@@ -563,3 +563,13 @@ h1 { animation-delay: 0.25s; }
   .nav-40-sep { margin: 0 0.5rem 0 0.4rem; }
   .nav-logo img.nav-40 { height: 36px; }
 }
+
+/* ── LOGOTIPO (logo + nombre en una sola imagen) ── */
+.nav-logo img.logo-marca { height: 54px; width: auto; display: block; align-self: center; }
+footer .nav-logo img.logo-marca { height: 38px; }
+@media (max-width: 600px) {
+  nav .nav-logo img.logo-marca { height: 44px; }
+}
+@media (max-width: 380px) {
+  nav .nav-logo img.logo-marca { height: 38px; }
+}

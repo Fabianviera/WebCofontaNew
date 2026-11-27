@@ -108,7 +108,7 @@ footer {
 }
 @media (max-width: 380px) {
   nav { padding: 1rem 1rem; }
-  .nav-logo img:not(.nav-40) { height: 34px !important; }
+  .nav-logo img:not(.nav-40):not(.logo-marca) { height: 34px !important; }
   .nav-logo .brand { font-size: 1.35rem; }
   .nav-40-sep { margin: 0 0.4rem 0 0.2rem; }
   .nav-logo img.nav-40 { height: 30px; }
@@ -153,4 +153,14 @@ footer {
     display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--muted); font-weight: 500; margin-bottom: 0.15rem;
   }
+}
+
+/* ── LOGOTIPO (logo + nombre en una sola imagen) ── */
+.nav-logo img.logo-marca { height: 54px; width: auto; display: block; align-self: center; }
+footer .nav-logo img.logo-marca { height: 38px; }
+@media (max-width: 600px) {
+  nav .nav-logo img.logo-marca { height: 44px; }
+}
+@media (max-width: 380px) {
+  nav .nav-logo img.logo-marca { height: 38px; }
 }
